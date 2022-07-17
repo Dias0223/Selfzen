@@ -1,23 +1,32 @@
 package com.example.selfzen
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.budiyev.android.codescanner.AutoFocusMode
 import com.budiyev.android.codescanner.CodeScanner
 import com.budiyev.android.codescanner.CodeScannerView
 import com.budiyev.android.codescanner.DecodeCallback
 import com.budiyev.android.codescanner.ErrorCallback
 import com.budiyev.android.codescanner.ScanMode
+import com.google.firebase.database.*
+import java.util.*
+import kotlin.collections.ArrayList
 
 private const val CAMERA_REQUEST_CODE=101
 
 class ItemCodeScaner : AppCompatActivity() {
+
+
 
     private lateinit var codeScanner: CodeScanner
 
@@ -25,9 +34,21 @@ class ItemCodeScaner : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_code_scaner)
 
+
+
         setupPermissions()
         codeScanner()
+
+        val btnCart = findViewById<Button>(R.id.btn_viewCart)
+
+        btnCart.setOnClickListener{
+
+            val intent = Intent(this,CartPage::class.java)
+            startActivity(intent)
+        }
+
     }
+
 
     private fun codeScanner(){
 
@@ -62,6 +83,7 @@ class ItemCodeScaner : AppCompatActivity() {
             codeScanner.startPreview()
         }
     }
+
 
     override fun onResume(){
         super.onResume()
