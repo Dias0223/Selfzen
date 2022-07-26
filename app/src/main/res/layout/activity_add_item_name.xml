@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AddItemName">
+
+
+    <com.budiyev.android.codescanner.CodeScannerView
+        android:id="@+id/scanner_view"
+        android:layout_width="match_parent"
+        android:layout_height="362dp"
+        app:autoFocusButtonColor="@color/ButtonColour"
+        app:autoFocusButtonVisible="true"
+        app:flashButtonColor="@color/ButtonColour"
+        app:flashButtonVisible="true"
+        app:maskColor="#B2000000" />
+
+    <EditText
+        android:id="@+id/tv_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txt_mobileno"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="sans-serif"
+        android:hint="Scan Product Name"
+        android:editable="false"
+        android:textAlignment="center"
+        android:textColor="@color/ButtonColour"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:ignore="Deprecated" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="150dp"
+        android:layout_height="61dp"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="@color/ButtonColour"
+        android:text="Next"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_cart"
+        android:layout_width="150dp"
+        android:layout_height="61dp"
+        android:layout_below="@+id/textView4"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/ButtonColour"
+        android:text="Cart"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txt_mobileno"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scanner_view"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="84dp"
+        android:fontFamily="@font/bebas_neue"
+        android:text="Customer Mobile No"
+        android:textAlignment="center"
+        android:textColor="#43A047"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="321dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_textview"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="45dp"
+        android:fontFamily="sans-serif"
+        android:text="Note : Please Press &quot;Next&quot; Button for add Price and Quantity"
+        android:textColor="#F44336"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
